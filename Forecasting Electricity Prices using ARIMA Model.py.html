@@ -232,9 +232,9 @@ plt.show()
 
 # ### For s = 36
 
-# In[13]:
+# In[15]:
 
-mod_3 = sm.tsa.statespace.SARIMAX(y,order=(0, 1, 0),seasonal_order=(1, 0, 1, 48))
+mod_3 = sm.tsa.statespace.SARIMAX(y,order=(0, 1, 0),seasonal_order=(1, 0, 1, 36))
 results_3 = mod_3.fit()
 pred_3 = results_3.get_prediction(start=pd.to_datetime('2012-01-01'))
 
@@ -270,7 +270,7 @@ plt.show()
 # #### Observation 
 # We have observed an interesting observation here that increasing the value of s from 12 to its multiples of 24 and 36 results in different forecasted values pattern. To show this in a more clear manner, we increased the forecast period from 3 to 10 years and plotted all the forecasted values for the different s values on the same plot.
 
-# In[14]:
+# In[16]:
 
 pred_uc = results.get_forecast(steps=120)
 forecasted = pred_uc.predicted_mean
